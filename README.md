@@ -1,73 +1,156 @@
-# React + TypeScript + Vite
+# 🧠 Mnemosyne
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Mnemosyne** is a dark, minimalist, offline-first **memory improvement and habit tracking web app** — inspired by the Greek goddess of memory.  
+Built with **React, Vite, TypeScript, TailwindCSS (v4)**, and **Dexie.js (IndexedDB)**, it’s designed to feel like a native iOS app while running entirely free and locally in your browser.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌌 Concept
 
-## React Compiler
+Mnemosyne is a personalized system for tracking and improving **memory, focus, and cognitive resilience** through small, science-backed habits.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+It integrates mental, physical, and lifestyle actions into a unified, data-backed tracker — blending wellness with daily reflection and self-feedback.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧭 Core Philosophy
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The app is structured around two time horizons:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🔹 Short-Term Plan (0–4 weeks)
+- **Alcohol management:** track limits and hydration patterns  
+- **Sleep stabilization:** build consistency using magnesium, light control, and timing  
+- **Memory primers:** small daily recall, math, and name-linking drills  
+- **Professional/A.I. cognition:** code tracing, micro AI explainers  
+- **Supplements:** Omega-3, B-complex, Magnesium
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🔹 Long-Term Plan (3–12 months)
+- **Alcohol resets:** 2-week resets each quarter  
+- **Fitness and cardio:** support hippocampal blood flow  
+- **Structured brain training:** Dual N-Back, memory palace, problem-solving  
+- **Social recall:** train memory through names, facts, and follow-ups  
+- **Reflection tracking:** weekly journal loops for memory self-assessment  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Each category is broken into habits and prompts that can be toggled daily. Mnemosyne acts as both a **planner** and a **reflection partner**.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Current Phase: **Phase 3 — Core Build Complete**
+
+✅ *Fully functional PWA and offline-first habit tracker.*
+
+### Features implemented:
+- **Offline-first PWA** (installable on iOS/Android & Desktop)
+- **Service Worker** + **Web Manifest**
+- **Dexie.js IndexedDB** with pre-seeded memory improvement plan
+- **Dark theme UI** with Mnemosyne violet accent `#BB4CFF`
+- **Tap-to-complete habits** with persistence across sessions
+- **Modal-based reflection prompts**
+- **Dynamic progress bar (% of daily habits completed)**
+- **Automatic data seeding on first load**
+- **Responsive for mobile-first use**
+
+---
+
+## 🧩 Technology Stack
+
+| Layer | Tech |
+|:------|:-----|
+| Framework | [React](https://react.dev/) (with Vite + TypeScript) |
+| Styling | [TailwindCSS v4](https://tailwindcss.com/) |
+| Database | [Dexie.js](https://dexie.org/) (IndexedDB wrapper) |
+| PWA | Web Manifest + Service Worker |
+| Icons | [Lucide React](https://lucide.dev/icons) |
+| UI Components | Radix UI Dialog for modals |
+
+---
+
+## 🧱 Architecture Overview
+
+src/
+├─ components/
+│ └─ PromptModal.tsx # Reflection modal UI
+│
+├─ db.ts # Dexie database setup and seed
+├─ types.ts # Habit & schema interfaces
+├─ App.tsx # Main UI: categories, habits, progress bar
+├─ index.css # Tailwind v4 + Mnemosyne dark theme
+├─ main.tsx # App entry point + PWA registration
+└─ pwa.ts # Handles service worker registration
+
+ruby
+Copy code
+
+---
+
+## 🧠 App Functionality (Phase 3)
+
+| Category | Description |
+|:----------|:-------------|
+| **Daily Tracker** | Tapping a habit logs it for the day (binary or incremental). |
+| **Reflection Prompts** | Some habits open journaling-style modals with self-review questions. |
+| **Offline Database** | Dexie ensures all entries sync locally; no cloud dependencies. |
+| **Daily Progress** | Shows total % of habits completed for the day. |
+| **Responsive Layout** | Scales beautifully for iPhone-sized devices (optimized for mobile use). |
+
+---
+
+## 🗺️ Roadmap
+
+| Phase | Status | Description |
+|:------|:--------|:-------------|
+| **Phase 1** | ✅ | PWA shell, manifest, icons, service worker |
+| **Phase 2** | ✅ | Dexie database setup + seed with memory plan |
+| **Phase 3** | ✅ | Dark aesthetic UI, reflection modals, progress tracking |
+| **Phase 4** | 🚧 | Local push notifications + reminders system |
+| **Phase 5** | 🚧 | Habit analytics dashboard (streaks, trends, charts) |
+| **Phase 6** | 🚧 | Data export/import (JSON or cloud backup) |
+| **Phase 7** | 🚧 | Advanced AI reflection assistant integration |
+
+---
+
+## 📲 Using Mnemosyne
+
+### 💻 Development
+```cmd
+npm install
+npm run dev
+Then open:
+
+arduino
+Copy code
+http://localhost:5173
+📦 Production Build
+cmd
+Copy code
+npm run build
+npm run preview
+Then open:
+
+arduino
+Copy code
+http://localhost:4173
+📱 Installing on iPhone
+Open the preview URL in Safari.
+
+Tap the Share icon → Add to Home Screen.
+
+Mnemosyne now behaves as a standalone app (offline ready, full screen).
+
+💜 Design Aesthetic
+Primary Accent: #BB4CFF (Mnemosyne violet)
+
+Background: #0B1117 (true black)
+
+Surface Layers: #151B24
+
+Typography: soft gray text, rounded corners, motion-sensitive hover states
+
+Philosophy: minimal, symbolic, memory-oriented
+
+🧩 Credits
+Built with 💜 by ALYTIC5
+
+🧰 License
+This project is licensed under the MIT License.
+You’re free to fork, build, and expand Mnemosyne for personal or research use.
