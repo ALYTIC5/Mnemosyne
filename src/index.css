@@ -1,0 +1,69 @@
+/* Tailwind v4 baseline */
+@import "tailwindcss";
+
+/* ---------------------------------
+   Mnemosyne Dark Theme Tokens (v4)
+   These create utilities like bg-background, text-text, etc.
+---------------------------------- */
+@theme {
+  --color-background: #0B1117;
+  --color-surface:    #151B24;
+  --color-text:       #E6E6E6;
+  --color-primary:    #BB4CFF;
+  --color-primaryDark:#7A24B7;
+  --color-accent:     #BB4CFF;
+
+  /* optional - better default font */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue",
+               Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+               "Noto Color Emoji";
+}
+
+/* ---------------------------------
+   Global Base Styles
+---------------------------------- */
+@layer base {
+  html, body {
+    @apply bg-background text-text font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-text;
+  }
+
+  button {
+    @apply focus:outline-none active:scale-[0.98] transition-transform duration-100;
+  }
+}
+
+/* ---------------------------------
+   Reusable Components
+---------------------------------- */
+@layer components {
+  .mnemo-card {
+    @apply rounded-2xl p-4 bg-surface border border-surface hover:border-primary/50 transition-all;
+  }
+
+  .mnemo-header {
+    @apply text-3xl font-semibold text-primary text-center my-6;
+  }
+
+  .mnemo-section-title {
+    @apply text-xl font-semibold text-primaryDark mb-3;
+  }
+
+  .mnemo-habit {
+    @apply flex items-center justify-between rounded-2xl px-4 py-3 text-left transition-all;
+  }
+
+  .mnemo-habit-done {
+    @apply bg-primary/20 border border-primary;
+  }
+
+  .mnemo-habit-undone {
+    @apply bg-surface border border-surface hover:bg-primaryDark/10;
+  }
+}
+
+/* Optional smooth scrolling */
+html { scroll-behavior: smooth; }

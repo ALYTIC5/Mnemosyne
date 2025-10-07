@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <!-- PWA / iOS install hooks -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#BB4CFF" />
+
+    <!-- iOS specific -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" href="/icons/icon-180.png" />
+
+    <!-- Favicon for desktop browsers -->
+    <link rel="icon" href="/icons/icon-192.png" />
+
+    <!-- Recommended viewport for iOS notch/safe areas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <!-- Title + description -->
+    <title>Mnemosyne</title>
+    <meta
+      name="description"
+      content="Mnemosyne — dark, offline-first habit & memory trainer app."
+    />
+
+    <!-- Tailwind base styles -->
+  </head>
+
+  <body class="bg-background text-text">
+    <div id="root"></div>
+
+    <!-- Entry point -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
